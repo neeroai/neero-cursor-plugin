@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "cursor-ask": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${CURSOR_PLUGIN_ROOT}/dist/cursor-ask.mjs"]
+    }
+  }
+}

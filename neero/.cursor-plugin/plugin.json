@@ -1,0 +1,9 @@
+{
+  "name": "neero",
+  "displayName": "Neero",
+  "version": "1.0.0",
+  "description": "Picker interactivo (cursor-ask) y la regla que traduce AskUserQuestion a Cursor",
+  "author": {
+    "name": "Neero"
+  }
+}

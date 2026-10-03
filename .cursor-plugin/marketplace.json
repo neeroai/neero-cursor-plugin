@@ -1,0 +1,16 @@
+{
+  "name": "neero",
+  "owner": {
+    "name": "Neero"
+  },
+  "metadata": {
+    "description": "Plugins de Neero para Cursor"
+  },
+  "plugins": [
+    {
+      "name": "neero",
+      "source": "neero",
+      "description": "Picker interactivo (cursor-ask) y la regla que traduce AskUserQuestion a Cursor"
+    }
+  ]
+}

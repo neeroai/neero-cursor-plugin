@@ -1,0 +1,18 @@
+---
+description: How to ask the user a question in Cursor, including skills written for Claude Code that call AskUserQuestion
+alwaysApply: true
+---
+
+# Asking the user
+
+`AskUserQuestion` is a Claude Code tool; it does not exist in Cursor. When a skill or rule says
+`AskUserQuestion`, use this ladder instead:
+
+1. `AskQuestion` (native) if it is in your tool catalog.
+2. Otherwise (`Tool not found` — Auto, Grok, Cloud), the MCP tool `ask_questions` from the
+   `cursor-ask` server: 1-4 `questions`, each with `id`, `prompt`, 2-6 `options` `{ id, label }`,
+   optional `recommendedId`. It blocks until the user answers.
+3. If neither is available or elicitation fails, ask in 1-2 short sentences of prose.
+
+Never use a `*-decisions` canvas or long A/B/C lists in prose as a substitute. Never assume the
+recommended option without an answer.

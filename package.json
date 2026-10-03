@@ -1,0 +1,23 @@
+{
+  "name": "neero-cursor-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketplace del plugin `neero` para Cursor. El plugin vive en neero/; aqui solo el tooling de build.",
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/cursor-ask.ts --target=node --format=esm --outfile neero/dist/cursor-ask.mjs",
+    "typecheck": "tsc --noEmit",
+    "smoke": "printf '%s\\n' '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-06-18\",\"capabilities\":{\"elicitation\":{}},\"clientInfo\":{\"name\":\"probe\",\"version\":\"1\"}}}' | node neero/dist/cursor-ask.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  }
+}
