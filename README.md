@@ -1,7 +1,17 @@
 # neero-cursor-plugin
 
-Cursor marketplace with one plugin, `neero`. Install: Cursor → **Customize** → **From GitHub
-Repository** → this repo's URL.
+Marketplace with one plugin, `neero`, for Cursor and Codex.
+
+| Tool | Install | Manifest it reads |
+| ---- | ------- | ----------------- |
+| Cursor | **Customize** → **From GitHub Repository** → this repo's URL | `neero/.cursor-plugin/plugin.json` → `mcp.json` (`${CURSOR_PLUGIN_ROOT}`) |
+| Codex | `codex plugin marketplace add neeroai/neero-cursor-plugin` + `codex plugin add neero@neero` | `neero/.codex-plugin/plugin.json` → `codex-mcp.json` |
+
+Two MCP files because the root variable differs: Cursor expands `${CURSOR_PLUGIN_ROOT}`, Codex
+does not; Codex resolves `cwd: "."` to the plugin root and ships its own node in
+`$CODEX_MCP_NODE_PATH` (same pattern as its bundled `code-review` plugin). Codex checks
+`.codex-plugin/` before `.cursor-plugin/`. `tool_timeout_sec: 660` outlives the form's 10-min wait.
+Codex does not read `rules/`; its equivalent of `ask.mdc` lives in `~/.codex/AGENTS.md`.
 
 | Component | Path | What |
 | --------- | ---- | ---- |

@@ -1,0 +1,9 @@
+{
+  "name": "neero",
+  "version": "1.0.1",
+  "description": "Interactive picker (cursor-ask MCP, ask_questions) so the agent asks the user instead of answering itself",
+  "author": {
+    "name": "Neero"
+  },
+  "mcpServers": "./codex-mcp.json"
+}
